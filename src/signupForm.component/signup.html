@@ -1,0 +1,24 @@
+<section class="form-section">
+  <form formGroupName = "signupForm"  class="whole_form">
+    <h2 id="form_title">Registration</h2>
+    <div class="form-content">
+      <label for="name">Name: </label>
+      <input formControlName = "name"/>
+    </div>
+    <div class="form-content">
+      <label for="email">Email: </label>
+      <input formControlName = "email"/>
+    </div>
+    <div class="form-content">
+      <label for="password">Password: </label>
+      <input formControlName = "password"/>
+    </div>
+    @if (this.revealPassword){
+      <div class="form-content">
+        <label for="rptPassword">Confirm password: </label>
+        <input formControlName = "rptPassword"/>
+      </div>
+    }
+<!--If showPassword is true, reveal rpt password. if not true, hide -->
+  </form>
+</section>
