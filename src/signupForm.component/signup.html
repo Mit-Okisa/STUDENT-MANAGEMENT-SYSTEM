@@ -1,24 +1,24 @@
 <section class="form-section">
-  <form formGroupName = "signupForm"  class="whole_form">
+  <form [formGroup] = "signUpForm" (ngSubmit)="writeToStorage()" class="whole_form">
     <h2 id="form_title">Registration</h2>
     <div class="form-content">
       <label for="name">Name: </label>
-      <input formControlName = "name"/>
+      <input type="text" formControlName = "name"/>
     </div>
     <div class="form-content">
       <label for="email">Email: </label>
-      <input formControlName = "email"/>
+      <input type="email" formControlName = "email"/>
     </div>
     <div class="form-content">
-      <label for="password">Password: </label>
-      <input formControlName = "password"/>
+      <label for="course">Course: </label>
+      <input type="text" formControlName = "course"/>
     </div>
-    @if (this.revealPassword){
-      <div class="form-content">
-        <label for="rptPassword">Confirm password: </label>
-        <input formControlName = "rptPassword"/>
-      </div>
-    }
-<!--If showPassword is true, reveal rpt password. if not true, hide -->
+    <div class="form-content">
+      <label for="admNo">Admission Number: </label>
+      <input type="text" formControlName = "admNo"/>
+    </div>
+    <div>
+      <input type="submit" >
+    </div>
   </form>
 </section>

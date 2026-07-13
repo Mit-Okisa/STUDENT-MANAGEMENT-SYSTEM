@@ -1,6 +1,11 @@
 import { Component} from '@angular/core';
-import {ReactiveFormsModule, FormBuilder, FormControl, Validators} from '@angular/forms';
-import {Home_Page} from '../home.component/home.component';
+import {
+  ReactiveFormsModule,
+  FormBuilder,
+  FormControl,
+  Validators,
+  FormGroup,
+} from '@angular/forms';
 
 @Component({
   selector: 'signup-form',
@@ -9,16 +14,31 @@ import {Home_Page} from '../home.component/home.component';
   imports: [ReactiveFormsModule],
 })
 export class SignupForm {
-  private showPassword = new Home_Page();
-  public revealPassword = this.showPassword.shouldShowPassword;
 
-  private formBuilder = new FormBuilder();
-  signupForm = this.formBuilder.group({
-    name: ['', [Validators.required]],
-    email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required], Validators.minLength(8)],
-    rptPassword: ['', [Validators.required, Validators.minLength(8)]],
+  signUpForm = new FormGroup({
+    name: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    course: new FormControl('', [Validators.required]),
+    admNo: new FormControl('', [Validators.required]),
   });
 
-  protected readonly Home_Page = Home_Page;
+  student_data = this.signUpForm.value;
+
+  // Every time a user clicks submit, their data is written into storage.
+
+  public writeToStorage() {
+    let name = this.student_data.name
+    console.log(name);
+    console.log(typeof (this.student_data.name));
+    localStorage.setItem('student_data', JSON.stringify(this.student_data));
+    let item = localStorage.getItem('student_data');
+    if (item == null) {
+      localStorage.setItem('student_data', JSON.stringify(this.student_data));
+    }else{
+      let student = JSON.parse(item);
+      console.log(student.name);
+    }
+  }
+
+
 }
