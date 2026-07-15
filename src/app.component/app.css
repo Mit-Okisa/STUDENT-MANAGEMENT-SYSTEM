@@ -1,0 +1,46 @@
+.app-container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-main {
+  flex: 1 0 auto;
+}
+
+footer{
+  background: #371818;
+  color: white;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-shrink: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+}
+
+p{
+  margin: 2em;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  height: max-content;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  backdrop-filter: blur(10px);
+  background-color: #c34141;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  gap: 3em;
+  margin: 1em;
+}
+
+h2 {margin: 1em;}
+

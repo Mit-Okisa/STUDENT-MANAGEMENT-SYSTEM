@@ -1,10 +1,6 @@
-import { Component, inject} from '@angular/core';
+import { Component, inject, signal, WritableSignal } from '@angular/core';
 import {StudentsDataService} from '../student-data-service';
-
-import {
-  ReactiveFormsModule,
-  FormsModule
-} from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Student } from '../student.interface';
 
 @Component({
@@ -18,7 +14,7 @@ export class SignupForm {
   private _studentsDataService = inject(StudentsDataService);
   student: Student = new Student();
 
-  addToArray() {
+  public addToArray() {
     alert('Form submitted successfully!');
     this._studentsDataService.addStudent(this.student);
   }

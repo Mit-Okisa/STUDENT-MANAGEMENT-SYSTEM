@@ -1,0 +1,49 @@
+<div>
+  <label for="trans">Select category:</label>
+  <input id="trans" name="trans" type="radio" (click)="studentYear.set(0)"/>All students
+  <input id="trans" name="trans" type="radio" (click)="studentYear.set(1)"/>1st year students
+  <input id="trans" name="trans" type="radio" (click)="studentYear.set(2)"/>2nd year students
+  <input id="trans" name="trans" type="radio" (click)="studentYear.set(3)"/>3rd year students
+  <input id="trans" name="trans" type="radio" (click)="studentYear.set(4)"/>4th year students
+  <input id="trans" name="trans" type="radio" (click)="studentYear.set(5)"/>5th year students
+</div>
+
+@if (obtainStudentsData().length == 0){
+  <div class="emptyList">
+    <p>Sorry, there are no students registered yet!</p>
+  </div>
+} @else {
+  <div class="registered">
+    <div class="table-section">
+      <h3>REGISTERED STUDENTS</h3>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Course</th>
+          <th>Admission Number</th>
+          <th>Year of Study</th>
+
+        </tr>
+        @for (student of obtainStudentsData(); track student.admissionNumber){
+          <tr>
+            <td>{{student.name}}</td>
+            <td>{{student.email}}</td>
+            <td>{{student.courseName}}</td>
+            <td>{{student.admissionNumber}}</td>
+            <td>{{student.yearOfStudy}}</td>
+            <td><button (click)="studentServiceData.removeStudent(student.admissionNumber)">-</button></td>
+          </tr>
+        }
+      </table>
+    </div>
+    <div>
+      <label for = "stdName">Enter the name of the student: </label>
+      <input type="text" id="stdName"/>
+      <label for = "stdAdmission">Enter the admission number: </label>
+      <input type="text" id="stdName" #admnNumber/>
+      <button type="button" (click)="transitionService.transitionStudent(admnNumber.value)">Transition</button>
+    </div>
+
+  </div>
+}

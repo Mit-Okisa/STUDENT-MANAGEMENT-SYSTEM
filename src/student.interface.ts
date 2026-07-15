@@ -1,6 +1,5 @@
-
 export class Student {
-  name: string ='';
+  name: string = '';
   email: string = '';
   admissionNumber: string = '';
   courseName: string = '';
