@@ -6,7 +6,7 @@ import { StudentList } from '../studentList.component/studentList';
 export const routes: Routes = [
   { path: '', component: Home_Page },
   { path: 'home', component: Home_Page },
-  { path: 'signup', component: SignupForm },
+  { path: 'register', component: SignupForm },
   { path: 'list', component: StudentList },
-  { path: 'home/signup', component: SignupForm },
+  { path: 'home/register', component: SignupForm },
 ];
