@@ -15,14 +15,14 @@
     </div>
     <div class="form-content">
       <label for="admissionNumber">Admission Number: </label>
-      <input id="admissionNumber" type="text" name="admissionNumber" [(ngModel)]="student.admissionNumber"/>
+      <input id="admissionNumber" type="text" name="admissionNumber" [(ngModel)] = "student.admissionNumber"/>
     </div>
     <div class="form-content">
       <label for ="yearOfStudy">Year of Study: </label>
-      <input id="yearOfStudy" name="yearOfStudy" [(ngModel)]="student.yearOfStudy">
+      <input id="yearOfStudy" name="yearOfStudy" [(ngModel)] = "student.yearOfStudy">
     </div>
     <div class="form-content">
-      <button type="submit" (click)="addToArray()">Submit</button>
+      <button type="submit" (click)="this.addToArray()">Submit</button>
     </div>
   </form>
 </section>
