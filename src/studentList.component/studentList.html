@@ -19,7 +19,7 @@
             <th>Admission Number</th>
             <th>Year of Study</th>
           </tr>
-          @for (student of allStudents; track student){
+          @for (student of allStudents(); track student){
             <tr>
               <td>{{student.name}}</td>
               <td>{{student.email}}</td>

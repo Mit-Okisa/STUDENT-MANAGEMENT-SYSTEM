@@ -15,12 +15,12 @@ export class StudentList implements OnInit {
   private _studentsDataService = inject(StudentDataServiceHTTP);
   private _transitionStudentService = inject(TransitionStudentService);
   studentYear = signal(0);
-  allStudents: Student[] = [];
+  allStudents = signal<Student[]>([]);
 
   ngOnInit() {
     this._studentsDataService.getStudents().subscribe({
       next: (stds)=> {
-        this.allStudents = stds;
+        this.allStudents.set(stds);
       },
       error: err => console.log(`Error: ${err}`)
     });
@@ -29,7 +29,7 @@ export class StudentList implements OnInit {
   deleteStudent(id: string) {
     this._studentsDataService.removeStudent(id).subscribe({
       next: ()=>{
-        this.allStudents = this.allStudents.filter(student => student.id !== id);
+        this.allStudents.set(this.allStudents().filter(student => student.id !== id));
         alert('Student removed successfully!')
       },
       error: err => console.log(`Error: ${err}`)
@@ -37,7 +37,7 @@ export class StudentList implements OnInit {
   }
 
   transitionStudent(admNumber: string){
-    for(let s of this.allStudents){
+    for(let s of this.allStudents()){
       if(s.id == admNumber){
         this._studentsDataService.transitionStudent(s).subscribe({
           next: (std) => alert(`${std.name} transitioned successfully!`)
