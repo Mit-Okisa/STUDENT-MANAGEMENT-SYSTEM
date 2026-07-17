@@ -1,9 +1,9 @@
-export class Student {
-  name: string = '';
-  email: string = '';
-  admissionNumber: string = '';
-  courseName: string = '';
-  yearOfStudy: number = 1;
+export interface Student {
+  name: string,
+  email: string,
+  id: string,
+  courseName: string,
+  yearOfStudy: number,
 }
 
 

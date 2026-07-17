@@ -8,7 +8,7 @@ export class TransitionStudentService {
   transitionStudent(num: string) {
 
     for (let s of this._studentsDataService.getStudentData()) {
-      if (s.admissionNumber == num) {
+      if (s.id == num) {
         s.yearOfStudy = Number(s.yearOfStudy) + 1;
         this._studentsDataService.addStudent(s);
       }

@@ -3,26 +3,26 @@
     <h2 id="form_title">Registration</h2>
     <div class="form-content">
       <label for="name">Name: </label>
-      <input id="name" type="text" name = "name" [(ngModel)]="student.name"/>
+      <input id="name" type="text" name = "name" [(ngModel)]="name"/>
     </div>
     <div class="form-content">
       <label for="email">Email: </label>
-      <input id="email" type="email" name = "email" [(ngModel)]="student.email"/>
+      <input id="email" type="email" name = "email" [(ngModel)]="email"/>
     </div>
     <div class="form-content">
       <label for="courseName">Course: </label>
-      <input id="courseName" type="text" name = "courseName" [(ngModel)]="student.courseName"/>
+      <input id="courseName" type="text" name = "courseName" [(ngModel)]="courseName"/>
     </div>
     <div class="form-content">
-      <label for="admissionNumber">Admission Number: </label>
-      <input id="admissionNumber" type="text" name="admissionNumber" [(ngModel)] = "student.admissionNumber"/>
+      <label for="id">Admission Number: </label>
+      <input id="id" type="text" name="id" [(ngModel)] = "id"/>
     </div>
     <div class="form-content">
       <label for ="yearOfStudy">Year of Study: </label>
-      <input id="yearOfStudy" name="yearOfStudy" [(ngModel)] = "student.yearOfStudy">
+      <input id="yearOfStudy" name="yearOfStudy" [(ngModel)] = "yearOfStudy">
     </div>
     <div class="form-content">
-      <button type="submit" (click)="this.addToArray()">Submit</button>
+      <button type="submit" (click)="this.addStudent()">Submit</button>
     </div>
   </form>
 </section>

@@ -1,5 +1,5 @@
 import { Component, inject, signal, WritableSignal } from '@angular/core';
-import {StudentsDataService} from '../student-data-service';
+import {StudentDataServiceHTTP} from '../studentData ServiceHTTP';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Student } from '../student.interface';
 
@@ -8,14 +8,26 @@ import { Student } from '../student.interface';
   templateUrl: `./signup.html`,
   styleUrl: './signup.css',
   imports: [ReactiveFormsModule, FormsModule],
-  providers: [StudentsDataService],
+  providers: [StudentDataServiceHTTP],
 })
 export class SignupForm {
-  private _studentsDataService = inject(StudentsDataService);
-  student: Student = new Student();
+  private _studentsDataService = inject(StudentDataServiceHTTP);
+  // student: Student = new Student();
+  name = '';
+  email = '';
+  id = '';
+  courseName = '';
+  yearOfStudy =1;
 
-  public addToArray() {
-    alert('Form submitted successfully!');
-    this._studentsDataService.addStudent(this.student);
+  public addStudent() {
+    let student: Student = {name: this.name, email: this.email, id: this.id, courseName:this.courseName, yearOfStudy:this.yearOfStudy };
+
+    this._studentsDataService.saveStudent(student).subscribe({
+      next: (savedStudent) => {
+        alert(`${savedStudent.name} added successfully!`);
+        this.yearOfStudy = 1; this.name = ''; this.email = ''; this.courseName = ''
+        this.id = '';},
+      error: (err)=> alert(`Error: ${err.message}!`)
+    });
   }
 }

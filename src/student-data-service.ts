@@ -8,9 +8,9 @@ export class StudentsDataService {
   addStudent(std: Student) {
     let studentList = this.getStudentData();
     let filteredStudents: Student[] = [];
-    for(let student of studentList) {if(student.admissionNumber === std.admissionNumber) {
+    for(let student of studentList) {if(student.id === std.id) {
       filteredStudents = studentList.filter(
-        (student) => student.admissionNumber !== std.admissionNumber,
+        (student) => student.id !== std.id,
       );
       filteredStudents.push(std);
       localStorage.setItem(this._STUDENTS_DATA_KEY, JSON.stringify(filteredStudents));
@@ -28,7 +28,7 @@ export class StudentsDataService {
   }
 
   removeStudent(id: string) {
-    let filteredStudents = this.getStudentData().filter((student) => student.admissionNumber !== id);
+    let filteredStudents = this.getStudentData().filter((student) => student.id !== id);
     localStorage.setItem(this._STUDENTS_DATA_KEY, JSON.stringify(filteredStudents));
   }
 
