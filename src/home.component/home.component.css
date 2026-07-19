@@ -1,6 +1,5 @@
 .home_page {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   height: 80vh;
@@ -12,20 +11,23 @@
 }
 
 .welcome_message{
-  text-align: center;
+  text-align: left;
   text-wrap: wrap;
-  width:100%;
+  width:60%;
+  padding: 20px;
+  border-right: #371818 1px solid;
 }
 
 p{font-size: 30px;}
 
 .login_buttons{
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   text-align: center;
   gap: 30px;
-  margin-bottom: 90px;
+  width:40%;
 }
 
 button{

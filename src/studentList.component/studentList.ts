@@ -1,8 +1,7 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { StudentDataServiceHTTP } from '../studentData ServiceHTTP';
 import {FormsModule } from '@angular/forms';
-import {TransitionStudentService} from '../transitionStudentService';
-import { Student } from '../student.interface';
+import { Student } from '../interfaces';
 
 
 @Component({
@@ -13,16 +12,17 @@ import { Student } from '../student.interface';
 })
 export class StudentList implements OnInit {
   private _studentsDataService = inject(StudentDataServiceHTTP);
-  private _transitionStudentService = inject(TransitionStudentService);
   studentYear = signal(0);
   allStudents = signal<Student[]>([]);
+  studentInYears = signal<Student[]>([]);
 
   ngOnInit() {
     this._studentsDataService.getStudents().subscribe({
-      next: (stds)=> {
+      next: (stds) => {
         this.allStudents.set(stds);
+        this.studentInYears.set(stds);
       },
-      error: err => console.log(`Error: ${err}`)
+      error: (err) => console.log(`Error: ${err}`),
     });
   }
 
@@ -40,8 +40,18 @@ export class StudentList implements OnInit {
     for(let s of this.allStudents()){
       if(s.id == admNumber){
         this._studentsDataService.transitionStudent(s).subscribe({
-          next: (std) => alert(`${std.name} transitioned successfully!`)
+          next: (std) => {
+            alert(`${std.name} transitioned successfully!`);
+          }
         });}
     }
   }
+
+  changeYears(year: number){
+    this.studentYear.set(year);
+    if (this.studentYear()==0){
+      this.studentInYears.set(this.allStudents());}else{
+    let years = this.studentInYears().filter(std => std.yearOfStudy == this.studentYear());
+    this.studentInYears.set(years);
+  }}
 }

@@ -3,11 +3,11 @@
     <h2 id="form_title">Registration</h2>
     <div class="form-content">
       <label for="name">Name: </label>
-      <input id="name" type="text" name = "name" [(ngModel)]="name"/>
+      <input id="name" type="text" name = "name" [(ngModel)]="name" required/>
     </div>
     <div class="form-content">
       <label for="email">Email: </label>
-      <input id="email" type="email" name = "email" [(ngModel)]="email"/>
+      <input id="email" type="email" name = "email" [(ngModel)]="email" required/>
     </div>
     <div class="form-content">
       <label for="courseName">Course: </label>
@@ -22,7 +22,17 @@
       <input id="yearOfStudy" name="yearOfStudy" [(ngModel)] = "yearOfStudy">
     </div>
     <div class="form-content">
-      <button type="submit" (click)="this.addStudent()">Submit</button>
+      <label for ="password">Password: </label>
+      <input id="password" name="password" [(ngModel)] = "password">
     </div>
+    @if (validatorFunction()){
+    <div class="form-content">
+      <button type="submit" (click)="this.addStudent()" >Submit</button>
+    </div>
+    }@else{
+      <div class="form-content">
+        <p>{{formValidMessage}}</p>
+      </div>
+    }
   </form>
 </section>

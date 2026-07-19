@@ -4,6 +4,11 @@ export interface Student {
   id: string,
   courseName: string,
   yearOfStudy: number,
+  password: string,
 }
 
+export interface Courses {
+  name: string;
+  code: string;
+}
 

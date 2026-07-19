@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Student } from './student.interface';
+import { Student } from './interfaces';
 
 @Injectable({ providedIn: 'root' })
 export class StudentsDataService {
