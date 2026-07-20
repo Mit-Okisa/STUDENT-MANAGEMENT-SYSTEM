@@ -1,3 +1,5 @@
+<head><title>Registration</title></head>
+
 <section class="form-section">
   <form class="whole_form">
     <h2 id="form_title">Registration</h2>
@@ -25,14 +27,8 @@
       <label for ="password">Password: </label>
       <input id="password" name="password" [(ngModel)] = "password">
     </div>
-    @if (validatorFunction()){
     <div class="form-content">
       <button type="submit" (click)="this.addStudent()" >Submit</button>
     </div>
-    }@else{
-      <div class="form-content">
-        <p>{{formValidMessage}}</p>
-      </div>
-    }
   </form>
 </section>

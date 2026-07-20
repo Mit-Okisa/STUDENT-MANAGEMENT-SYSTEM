@@ -28,7 +28,7 @@ export class SignupForm {
       next: (savedStudent) => {
         alert(`${savedStudent.name} added successfully!`);
         this.yearOfStudy = 1; this.name = ''; this.email = ''; this.courseName = ''
-        this.id = '';},
+        this.id = '';this.password = '';},
       error: (err)=> alert(`Error: ${err.message}!`)
     });
   }

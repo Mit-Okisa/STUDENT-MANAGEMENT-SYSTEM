@@ -13,8 +13,24 @@
       "email": "joyndanu7@gmail.com",
       "id": "BNS001",
       "courseName": "Bsc. Nursing",
-      "yearOfStudy": "2",
+      "yearOfStudy": 3,
       "password": "1234567"
+    },
+    {
+      "name": "Hannah Githuki",
+      "email": "hannah03@gmail.com",
+      "id": "MCS001",
+      "courseName": "Mass Communication",
+      "yearOfStudy": "4",
+      "password": "Hannah254"
+    },
+    {
+      "name": "Emmanuel Kiprotich",
+      "email": "emmanuelkiprop39@gmail.com",
+      "id": "ENG001",
+      "courseName": "Electrical Engineering",
+      "yearOfStudy": "5",
+      "password": "Emmanuel@5"
     }
   ],
   "courses": [],
