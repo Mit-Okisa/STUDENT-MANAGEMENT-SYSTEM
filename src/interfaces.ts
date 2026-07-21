@@ -12,3 +12,10 @@ export interface Courses {
   code: string;
 }
 
+export interface Admin {
+  name: string,
+  email: string,
+  id: string,
+  password: string,
+  department: string,
+}

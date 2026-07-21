@@ -1,0 +1,58 @@
+.sect{
+  display: flex;
+  background-color: #e4d5d2;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  margin-top: 5px;
+  width: 50%;
+}
+
+h2{
+  border-bottom: #e49c9c solid 1px;
+  text-align: center;
+  width: max-content;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%;
+  height: max-content;
+  border-right: #e49c9c 1px solid;
+  padding: 20px;
+  gap: 2rem;
+  margin-left: 20px;
+}
+
+.content {
+  font-size: 16px;
+  display: flex;
+  justify-content: left;
+  gap: 1rem;
+}
+
+button {
+  border-width: 1px;
+  border-radius: 10px;
+  background-color: #d4d5d2;
+  padding: 5px;
+  font-size: 14px;
+}
+
+#another_container{
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+#my_buttons{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}

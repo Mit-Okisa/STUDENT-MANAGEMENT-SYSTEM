@@ -1,13 +1,4 @@
 <head><title>Registered Students</title></head>
-  <div class = 'choice'>
-    <label for="trans" style="font-size: 20px;">Select category:</label>
-    <input id="trans" name="trans" type="radio" (click)="changeYears(0)"/>All students
-    <input id="trans" name="trans" type="radio" (click)="changeYears(1)"/>1st year students
-    <input id="trans" name="trans" type="radio" (click)="changeYears(2)"/>2nd year students
-    <input id="trans" name="trans" type="radio" (click)="changeYears(3)"/>3rd year students
-    <input id="trans" name="trans" type="radio" (click)="changeYears(4)"/>4th year students
-    <input id="trans" name="trans" type="radio" (click)="changeYears(5)"/>5th year students
-  </div>
     <div class="registered">
       <div class="table-section">
         <h3>REGISTERED STUDENTS</h3>
@@ -19,7 +10,7 @@
             <th>Admission Number</th>
             <th>Year of Study</th>
           </tr>
-          @for (student of studentInYears(); track student){
+          @for (student of allStudents(); track student){
             <tr>
               <td>{{student.name}}</td>
               <td>{{student.email}}</td>

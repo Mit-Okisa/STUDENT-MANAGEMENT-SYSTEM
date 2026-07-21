@@ -1,0 +1,37 @@
+<section class="sect">
+  <div id="container">
+    <form class="form">
+      <h2>Admin Login</h2>
+      <div class="content">
+        <label for="name">Name: </label>
+        <input id="name" type="text" name="name" placeholder="Enter your name" [(ngModel)]="name" required>
+      </div>
+      <div class="content">
+        <label for="email">Email Address: </label>
+        <input id="email" type="email" name="email" placeholder="Enter your email" [(ngModel)]="email" required>
+      </div>
+      <div class="content">
+        <label for="password">Password: </label>
+        <input id="password" type="password" name="password" placeholder="Enter your password" [(ngModel)]="password" required>
+      </div>
+      <div>
+        <button type="submit" (click)="checkAdmin()">Submit </button>
+      </div>
+    </form>
+  </div>
+  <div id="another_container">
+     @if(display){
+        <div>
+          <p>Hello {{name}}, welcome back!</p>
+          <p>What do you want to do today?</p>
+            <div id="my_buttons">
+              <button type="button">Add Course</button>
+              <button type="button">View registered students.</button>
+              <button type="button">Remove student.</button>
+              <button type="button">Transition student</button>
+            </div>
+        </div>
+      }
+  </div>
+</section>
+

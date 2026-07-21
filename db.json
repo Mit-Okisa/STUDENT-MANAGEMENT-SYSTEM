@@ -7,33 +7,25 @@
       "courseName": "BSE",
       "yearOfStudy": 1,
       "password": "123456"
-    },
-    {
-      "name": "Joy Ndanu",
-      "email": "joyndanu7@gmail.com",
-      "id": "BNS001",
-      "courseName": "Bsc. Nursing",
-      "yearOfStudy": 3,
-      "password": "1234567"
-    },
-    {
-      "name": "Hannah Githuki",
-      "email": "hannah03@gmail.com",
-      "id": "MCS001",
-      "courseName": "Mass Communication",
-      "yearOfStudy": "4",
-      "password": "Hannah254"
-    },
-    {
-      "name": "Emmanuel Kiprotich",
-      "email": "emmanuelkiprop39@gmail.com",
-      "id": "ENG001",
-      "courseName": "Electrical Engineering",
-      "yearOfStudy": "5",
-      "password": "Emmanuel@5"
     }
   ],
-  "courses": [],
-  "admin": [],
-  "$schema": "./node_modules/json-server/schema.json"
+  "admins": [
+    {
+      "name": "Peter Muturi",
+      "email": "petermuturi@gmail.com",
+      "id": "CS-PM001",
+      "password": "PM1n",
+      "department": "Computer Science"
+    },
+    {
+      "name": "Anne Mugo",
+      "email": "annemugo@gmail.com",
+      "id": "CM-AM001",
+      "password": "AM1n2",
+      "department": "Business"
+    }
+  ],
+  "courses": [
+
+  ]
 }
